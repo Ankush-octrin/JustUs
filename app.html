@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
+
+    <title>JustUs — Private Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- Authentication Screen -->
+
+        <section id="authScreen" class="auth-screen">
+
+            <div class="auth-card">
+
+                <div class="brand-icon">J</div>
+
+                <h1>JustUs</h1>
+
+                <p class="subtitle">
+                    Just two people. One private space.
+                </p>
+
+                <form id="authForm">
+
+                    <div id="phoneSection">
+
+                        <label for="phoneNumber">
+                            Phone number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            placeholder="+919XXXXXXXXX"
+                            autocomplete="tel"
+                            required
+                        >
+
+                        <p class="input-hint">
+                            Enter your registered number
+                            with the country code.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="sendOtpButton"
+                            class="primary-button"
+                        >
+                            Send verification code
+                        </button>
+
+                    </div>
+
+                    <div id="otpSection" class="hidden">
+
+                        <label for="otpCode">
+                            Verification code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="otpCode"
+                            placeholder="Enter 6-digit OTP"
+                            inputmode="numeric"
+                            autocomplete="one-time-code"
+                            maxlength="6"
+                        >
+
+                        <button
+                            type="button"
+                            id="verifyOtpButton"
+                            class="primary-button"
+                        >
+                            Verify and enter chat
+                        </button>
+
+                        <button
+                            type="button"
+                            id="changeNumberButton"
+                            class="secondary-button"
+                        >
+                            Change phone number
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <div id="recaptcha-container"></div>
+
+                <p
+                    id="authMessage"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+                <p class="privacy-note">
+                    Private access is limited to two
+                    authorized phone numbers.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Messenger Screen -->
+
+        <section id="messenger" class="messenger hidden">
+
+            <header class="chat-header">
+
+                <div class="header-brand">
+                    <div class="small-brand-icon">J</div>
+
+                    <div>
+                        <h2>JustUs</h2>
+                        <p>Our little corner</p>
+                    </div>
+                </div>
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+                    Log out
+                </button>
+
+            </header>
+
+
+            <div class="chat-contact">
+
+                <div class="avatar">♡</div>
+
+                <div class="contact-info">
+                    <h3 id="chatName">Just Us</h3>
+
+                    <p id="chatStatus">
+                        Private conversation
+                    </p>
+                </div>
+
+                <div class="secure-badge">
+                    <span class="secure-dot"></span>
+                    Private
+                </div>
+
+            </div>
+
+
+            <div
+                id="messages"
+                class="messages"
+                aria-live="polite"
+                aria-label="Chat messages"
+            >
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-heart">♡</div>
+
+                    <h3>A space for just us</h3>
+
+                    <p>
+                        Send the first message and start
+                        your conversation.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="messageForm" class="message-form">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Write something..."
+                    maxlength="4000"
+                    autocomplete="off"
+                    aria-label="Your message"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    id="sendButton"
+                    aria-label="Send message"
+                >
+                    Send
+                </button>
+
+            </form>
+
+
+            <footer class="chat-footer">
+                Made for two. ♡
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
