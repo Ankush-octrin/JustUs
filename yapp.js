@@ -44,8 +44,8 @@ const db = getFirestore(app);
 // 2. Only these two email addresses can access JustUs.
 // Replace both placeholders before testing.
 
-const OWNER_EMAIL = "your-email@example.com".toLowerCase();
-const FRIEND_EMAIL = "friend-email@example.com".toLowerCase();
+const OWNER_EMAIL = "ankush2r@gmail.com".toLowerCase(); // my email
+const FRIEND_EMAIL = "ankush80838@gmail.com".toLowerCase(); // friend's email
 
 const ALLOWED_EMAILS = [
     OWNER_EMAIL,
